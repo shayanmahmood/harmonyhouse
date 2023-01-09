@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  border: 0px;
+}
+body {
+  background-image: url("../img/LRCR-Entertainment-300x169.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.wrapper {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+z-index: 100000000;
+}
+
+.letter {
+  font-family: "Dosis", sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+  text-shadow: 0.03em 0.03em 0.02em #777;
+  will-change: transform;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  color: white;
+  margin: 30px 0px; 
+}
+
+/* This is all we need :D */
+.hover1:hover {
+  color: deeppink;
+  transition: transform 0.2s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+
+.hover2:hover {
+  color: crimson;
+  transition: transform 0.2s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+.hover3:hover {
+  color: aquamarine;
+  transition: transform 0.2s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+.hover4:hover {
+  color: deepskyblue;
+  transition: transform 0.2s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+.hover5:hover {
+  color: cornflowerblue;
+  transition: transform 0.2s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+.hover6:hover {
+  color: darkblue;
+  transition: transform 0.6s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+.hover7:hover {
+  color: goldenrod;
+  transition: transform 0.2s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+.hover8:hover {
+  color: darkorange;
+  transition: transform 0.2s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+.hover9:hover {
+  color: darksalmon;
+  transition: transform 0.5s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+.hover10:hover {
+  color: burlywood;
+  transition: transform 0.3s ease;
+  transform: scaleX(0.8) scaleY(1.2) scale(1.3);
+}
+
+.wrapper-piano {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  border-radius: 20px;
+  background: #141414;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  width: 50vw;
+  height: 40vh;
+}
+.piano-keys {
+  display: flex;
+  list-style: none;
+  margin-top: 40px;
+}
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+.piano-keys .black {
+  z-index: 2;
+  width: 44px;
+  height: 140px;
+  margin: 0 -22px 0 -22px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#333, #000);
+}
+.piano-keys .black.active {
+  box-shadow: inset -5px -10px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom, #000, #434343);
+}
+.piano-keys .white {
+  height: 230px;
+  width: 70px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: linear-gradient(#fff 96%, #eee 4%);
+}
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.piano-keys .key span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: #a2a2a2;
+  font-size: 1.13rem;
+  text-align: center;
+  transition: 0.1s linear;
+}
+.piano-keys .key.hide span {
+  opacity: 0;
+}
+.piano-keys .black span {
+  bottom: 13px;
+  color: #888888;
+}
+
+@media screen and (max-width: 815px) {
+  .wrapper {
+    padding: 25px;
+  }
+  header {
+    flex-direction: column;
+  }
+  header :where(h2, .column) {
+    margin-bottom: 13px;
+  }
+  .volume-slider input {
+    max-width: 100px;
+  }
+  .piano-keys {
+    margin-top: 20px;
+  }
+  .piano-keys .key:where(:nth-child(9), :nth-child(10)) {
+    display: none;
+  }
+  .piano-keys .black {
+    height: 100px;
+    width: 40px;
+    margin: 0 -20px 0 -20px;
+  }
+  .piano-keys .white {
+    height: 180px;
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .piano-keys
+    .key:where(
+      :nth-child(13),
+      :nth-child(14),
+      :nth-child(15),
+      :nth-child(16),
+      :nth-child(17)
+    ) {
+    display: none;
+  }
+  .piano-keys .white {
+    width: 50px;
+  }
+}
+
+.pressed{
+  background: linear-gradient(#8888 96%, #fff 4%) !important;
+  transition: all 0.80s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+}
+
+.Shine{
+  
+}
+
+/* video{
+  width: 102%;
+  height: 194%;
+  position: absolute;
+  margin-left: -30px;
+} */
+
+.red{
+  background: green;
+  width: 500px;
+  height: 300px;
+}
+
+@media only screen and (max-width:1200px) {
+  body{
+    display: none;
+  }
+  
+}
